@@ -6,7 +6,7 @@ const Header = () => {
   const { isLoggedIn } = useAppContext();
 
   return (
-    <div className="bg-red-800 py-6">
+    <div className="py-6" style={{ background: "rgb(255 58 90)"}}>
       <div className="container mx-auto flex justify-between">
         <span className="text-3xl text-white font-bold tracking-tight">
           <Link to="/">BookingEasy.com</Link>
@@ -22,9 +22,9 @@ const Header = () => {
               </Link>
               <Link
                 className="flex items-center text-white px-3 font-bold hover:bg-red-600"
-                to="/my-hotels"
+                to="/my-banquet"
               >
-                My Hotels
+                All Banquet
               </Link>
               <SignOutButton />
             </>

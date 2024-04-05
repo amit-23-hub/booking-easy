@@ -1,6 +1,6 @@
 const Footer = () =>{
     return(
-        <div className="bg-red-800 py-10">
+        <div className="py-10" style={{ background: "rgb(255 58 90)"}}>
             <div className="container mx-auto flex justify-between items-center">
                 <span className="text-3xl text-white font-bold tracking-tight">
                     BookingEasy.com
