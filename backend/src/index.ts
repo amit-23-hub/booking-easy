@@ -8,6 +8,7 @@ import myBanketRoutes from './Routes/My-banket'
 import cookieParser from 'cookie-parser'
 import path from 'path';
 import { v2 as cloudinary} from 'cloudinary'
+import banquetRoutes from './Routes/Banquet'
 
 cloudinary.config({
     cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname,"../../frontend/dist")))
 app.use("/api/auth",authRoutes);
 app.use("/api/users",userRoutes);
 app.use("/api/my-banket",myBanketRoutes)
+app.use("/api/banquets", banquetRoutes);
 
 app.get("*",(req:Request,res:Response)=>{
     res.sendFile(path.join(__dirname,"../../frontend/dist/index.html"));

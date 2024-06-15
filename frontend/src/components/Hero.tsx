@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import images1 from "../assets/img2.png";
@@ -6,7 +6,7 @@ import images1 from "../assets/img2.png";
 const Hero = () => {
   const [search1, setSearch1] = useState("");
   const [search2, setSearch2] = useState("");
-
+// hii
   return (
     <div
       style={{

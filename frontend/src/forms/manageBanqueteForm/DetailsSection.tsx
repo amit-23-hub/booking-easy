@@ -51,7 +51,7 @@ const DetailsSecion = () =>{
              <textarea
              rows={10}
              className="border rounded w-full py-1 px-2 font-normal h-48"
-             {...register("name", { required: "This field is required" })}
+             {...register("description", { required: "This field is required" })}
              ></textarea>
             {errors.description && (
             <span className="text-red-500">{errors.description.message}</span>
@@ -64,7 +64,7 @@ const DetailsSecion = () =>{
              type="number"
              min={1}
              className="border rounded w-full py-1 px-2 font-normal"
-             {...register("name", { required: "This field is required" })}
+             {...register("prices", { required: "This field is required" })}
              ></input>
             {errors.prices && (
             <span className="text-red-500">{errors.prices.message}</span>

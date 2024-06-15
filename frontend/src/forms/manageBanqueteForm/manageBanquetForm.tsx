@@ -11,8 +11,8 @@ export type BanqueteFormData = {
     country:string
     description:string;
     type:string;
-    prices:string;
-    starRating:string;
+    prices:number;
+    starRating:number;
     owner:string;
     facilities:string[];
     imageFiles:FileList;
@@ -37,7 +37,6 @@ const ManageBanqueteForm = ({onSave, isLoading,banquet}:Props) =>{
 
     const onSubmit = handleSubmit((formDataJson: BanqueteFormData)=>{
         const formData = new FormData();
-
         if(banquet){
             formData.append("banquetId",banquet._id);
         }
@@ -46,9 +45,9 @@ const ManageBanqueteForm = ({onSave, isLoading,banquet}:Props) =>{
         formData.append("city",formDataJson.city);
         formData.append("country",formDataJson.country);
         formData.append("description",formDataJson.description);
-        formData.append("prices",formDataJson.prices);
-        formData.append("starRating",formDataJson.starRating);
-        formData.append("prices",formDataJson.prices);
+        formData.append("type",formDataJson.type);
+        formData.append("prices",formDataJson.prices.toString());
+        formData.append("starRating",formDataJson.starRating.toString());
         formData.append("owner",formDataJson.owner);
 
         formDataJson.facilities.forEach((facility,index)=>{
@@ -71,7 +70,7 @@ const ManageBanqueteForm = ({onSave, isLoading,banquet}:Props) =>{
 
 
         onSave(formData)
-    })
+    });
 
     return (
         <FormProvider {...formMethods}>
@@ -84,7 +83,7 @@ const ManageBanqueteForm = ({onSave, isLoading,banquet}:Props) =>{
                     disabled={isLoading}
                     type="submit" 
                     className="bg-red-600 text-white p-2 font-bold hover:bg-green-500 disabled:bg-gray-500">
-                        {isLoading?"Saving...":"Save"}
+                        {isLoading ? "Saving..." : "Save"}
                         </button>
                 </span>
             </form>
