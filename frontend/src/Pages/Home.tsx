@@ -1,13 +1,14 @@
 
 import Hero from '../components/Hero'
-import EventsSlider from '../components/VenderCard/EventSider'
+import VendorList from '../components/vendors/vendors'
+
 
 const Home = () => {
   return (
     <div>
       <Hero/>   
-      <EventsSlider/>
       
+      <VendorList/>
     </div>
   )
 }
